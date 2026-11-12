@@ -1,0 +1,9 @@
+{
+  "DEMO_MODE": "true",
+  "API_URL": "http://10.0.2.2:3000",
+  "MAPS_ENABLED": "false",
+  "FIREBASE_API_KEY": "",
+  "FIREBASE_APP_ID": "",
+  "FIREBASE_MESSAGING_SENDER_ID": "",
+  "FIREBASE_PROJECT_ID": ""
+}

@@ -1,0 +1,70 @@
+@base = http://127.0.0.1:3000
+@token = COLE_O_TOKEN_DO_LOGIN
+@adminToken = COLE_UM_TOKEN_FIREBASE_COM_CLAIM_ADMIN
+
+### Estado
+GET {{base}}/health
+
+### Criar conta demo
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{"name":"Viajante de Teste","email":"viajante@example.com","password":"uma-senha-de-teste"}
+
+### Login demo
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{"email":"viajante@example.com","password":"uma-senha-de-teste"}
+
+### Locais próximos
+GET {{base}}/places?lat=-15.5989&lng=-56.0949&radius=10000
+Authorization: Bearer {{token}}
+
+### Salvar favorito
+PUT {{base}}/favorites/jardim-aurora
+Authorization: Bearer {{token}}
+
+### Avaliar ou editar avaliação
+PUT {{base}}/places/jardim-aurora/review
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"rating":5,"comment":"Avaliação demonstrativa para testar o sistema."}
+
+### Cadastro/atualização administrativa: substitui todos os campos
+PUT {{base}}/admin/places/local-de-teste
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{"name":"Local de teste","description":"Descrição fictícia para apresentação acadêmica.","category":"Cultura","address":"Endereço fictício","lat":-15.5989,"lng":-56.0949,"hours":"Exemplo: 9h às 17h","price":0,"demo":true}
+
+### Restaurante
+PUT {{base}}/admin/restaurants/restaurante-de-teste
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{"name":"Restaurante de teste","cuisine":"Regional","address":"Endereço fictício","lat":-15.599,"lng":-56.095,"demo":true}
+
+### Moderação
+DELETE {{base}}/admin/places/local-de-teste/reviews/UID_DA_AVALIACAO
+Authorization: Bearer {{adminToken}}
+
+### Relatar informação incorreta
+POST {{base}}/places/cachoeira-serena/reports
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"reason":"incorrect","details":"Confira o horário informado para este local."}
+
+### Listar relatos (administrador)
+GET {{base}}/admin/reports
+Authorization: Bearer {{adminToken}}
+
+### Listar catálogo completo (administrador)
+GET {{base}}/admin/places
+Authorization: Bearer {{adminToken}}
+
+### Gerar novo código de recuperação local (invalida o anterior)
+POST {{base}}/auth/recovery-code
+Authorization: Bearer {{token}}

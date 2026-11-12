@@ -1,0 +1,10 @@
+{
+  "APP_ENV": "production",
+  "DEMO_MODE": "false",
+  "API_URL": "https://api.seu-dominio.com",
+  "MAPS_ENABLED": "true",
+  "FIREBASE_API_KEY": "adicione-a-chave-do-app",
+  "FIREBASE_APP_ID": "adicione-o-id-do-app",
+  "FIREBASE_MESSAGING_SENDER_ID": "adicione-o-id-do-remetente",
+  "FIREBASE_PROJECT_ID": "adicione-o-id-do-projeto"
+}

@@ -1,0 +1,44 @@
+{
+  "folders": [{ "path": "." }],
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Hippie Turismo: testar com servidor",
+        "type": "dart",
+        "request": "launch",
+        "program": "lib/main.dart",
+        "toolArgs": ["--dart-define-from-file=config.development.json"],
+        "preLaunchTask": "Hippie Turismo: iniciar backend"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Hippie Turismo: iniciar backend",
+        "type": "process",
+        "command": "powershell.exe",
+        "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/start-test-backend.ps1"],
+        "isBackground": true,
+        "problemMatcher": {
+          "owner": "hippie-backend",
+          "pattern": {
+            "regexp": "^(?!)(.*):(\\d+): (.*)$",
+            "file": 1,
+            "line": 2,
+            "message": 3
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "^HIPPIE_BACKEND_STARTING$",
+            "endsPattern": "^HIPPIE_BACKEND_READY$"
+          }
+        },
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "runOptions": { "instanceLimit": 1 }
+      }
+    ]
+  }
+}

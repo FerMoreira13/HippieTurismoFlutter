@@ -1,0 +1,57 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Servidor desenvolvimento",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "--env-file=${workspaceFolder}/../backend/.env.development",
+        "${workspaceFolder}/../tools/prepare-demo.mjs"
+      ],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "hippie-turismo-dev",
+        "pattern": {
+          "regexp": "^(.*)$",
+          "message": 1
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Iniciando servidor Hippie|Hippie Turismo:",
+          "endsPattern": "Hippie Turismo:"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Servidor testes",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "--env-file=${workspaceFolder}/../backend/.env.test",
+        "${workspaceFolder}/../tools/prepare-demo.mjs"
+      ],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "hippie-turismo-test",
+        "pattern": {
+          "regexp": "^(.*)$",
+          "message": 1
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Iniciando servidor Hippie|Hippie Turismo:",
+          "endsPattern": "Hippie Turismo:"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}

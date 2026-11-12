@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // O app acessa os dados pela API Node. O Admin SDK usa IAM e ignora estas regras.
+    // Nenhum cliente mobile pode escrever diretamente ou promover-se a administrador.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

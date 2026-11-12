@@ -1,0 +1,31 @@
+HIPPIE TURISMO - REGISTRO DE VERIFICAÇÃO
+Data de execução: 11/11/2026
+Ambiente: Windows; projeto local backend + mobile.
+Este é um resumo dos resultados observados na execução, não um log bruto integral.
+
+1. BACKEND
+Pasta: hippie-turismo/backend
+Executável: C:/Program Files/nodejs/node.exe
+Comando: node --env-file=.env.test --test test/*.test.js
+Resultado: tests 16; pass 16; fail 0; cancelled 0; skipped 0; todo 0.
+Código de saída: 0.
+
+2. ANÁLISE FLUTTER
+Pasta: hippie-turismo/mobile
+Executável: C:/develop/flutter/bin/flutter.bat
+Comando: flutter analyze --no-pub
+Resultado: No issues found! (ran in 4.3s)
+Código de saída: 0.
+
+3. TESTES FLUTTER
+Pasta: hippie-turismo/mobile
+Comando: flutter test --no-pub --reporter expanded
+Resultado final: 00:04 +11: All tests passed!
+Código de saída: 0.
+
+LIMITES
+Testes Flutter usam simulações e não demonstram integração nativa no dispositivo.
+Não foram executados testes reais de GPS, mapa, notificações, Firebase ou Google Places.
+Não foi gerado APK, vídeo ou captura do aparelho nesta revisão.
+Não foi executado teste ponta a ponta do app com a API em aparelho/emulador.
+Nenhuma correção de código do aplicativo foi feita nesta revisão.

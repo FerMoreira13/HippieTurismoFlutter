@@ -1,0 +1,11 @@
+{
+  "dart.flutterSdkPath": "C:\\develop\\flutter",
+  "dart.env": {
+    "ANDROID_AVD_HOME": "C:\\Users\\Fernanda Moreira13\\.android\\avd",
+    "ANDROID_EMULATOR_HOME": "C:\\Users\\Fernanda Moreira13\\.android"
+  },
+  "terminal.integrated.env.windows": {
+    "ANDROID_AVD_HOME": "C:\\Users\\Fernanda Moreira13\\.android\\avd",
+    "ANDROID_EMULATOR_HOME": "C:\\Users\\Fernanda Moreira13\\.android"
+  }
+}

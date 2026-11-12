@@ -1,0 +1,10 @@
+import { LocalDatabase } from '../src/database/local.js';
+const email=process.argv[2]?.trim().toLowerCase();
+if(!email) throw new Error('Pare o servidor e execute: node scripts/local-admin.js email@exemplo.com');
+const db=new LocalDatabase(process.env.LOCAL_DATA_FILE??'.data/demo.json');
+const accounts=new Map(db.data.accounts);
+const account=accounts.get(email);
+if(!account) throw new Error('Crie a conta local antes de conceder acesso.');
+accounts.set(email,{...account,admin:true});
+db.save('accounts',[...accounts]);
+console.log('Acesso administrativo local concedido. Reinicie o servidor e entre novamente.');

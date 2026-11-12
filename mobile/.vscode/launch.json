@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Hippie Turismo - Desenvolvimento Android",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "preLaunchTask": "Servidor desenvolvimento",
+      "toolArgs": [
+        "--dart-define-from-file=config.development.json"
+      ],
+      "deviceId": "emulator-5554"
+    },
+    {
+      "name": "Hippie Turismo - Testes Android",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "preLaunchTask": "Servidor testes",
+      "toolArgs": ["--dart-define-from-file=config.test.json"],
+      "deviceId": "emulator-5554"
+    },
+    {
+      "name": "Hippie Turismo - Produção Android",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "release",
+      "toolArgs": ["--dart-define-from-file=config.production.json"],
+      "deviceId": "emulator-5554"
+    }
+  ]
+}
