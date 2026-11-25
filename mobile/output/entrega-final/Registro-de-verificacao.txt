@@ -1,4 +1,12 @@
 HIPPIE TURISMO - REGISTRO DE VERIFICAÇÃO
+ATUALIZAÇÃO: 25/11/2026
+
+Validação recente executada em 25/11/2026, no Windows:
+- Backend: `node --env-file=.env.test --test test/*.test.js` — 16 testes aprovados; 0 falhas; código de saída 0.
+- Flutter: `flutter test --no-pub --reporter expanded` — execução sem saída por mais de um minuto; interrompida, sem resultado válido.
+- Análise Flutter: `flutter analyze --no-pub` — execução sem saída por mais de um minuto; interrompida, sem resultado válido.
+
+Os resultados detalhados abaixo são o registro histórico da execução de 11/11/2026; não representam resultados novos de Flutter.
 Data de execução: 11/11/2026
 Ambiente: Windows; projeto local backend + mobile.
 Este é um resumo dos resultados observados na execução, não um log bruto integral.
